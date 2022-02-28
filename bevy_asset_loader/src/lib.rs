@@ -196,7 +196,7 @@ impl<State: StateData> AssetLoaderConfiguration<State> {
     #[cfg(feature = "dynamic_assets")]
     pub fn get_asset_collection_files(&mut self, state: &State) -> Vec<String> {
         self.asset_collection_files
-            .remove(state)
+            .get(state)
             .unwrap()
             .iter()
             .map(|file| file.to_owned())
